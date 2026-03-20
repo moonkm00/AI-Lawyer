@@ -159,4 +159,8 @@ erDiagram
 
 <div align="center">
   <b>Representative:</b> ashfortune (Human13th Team) | <b>Contact:</b> support@ai-lawyer.com
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> f4efb7b3b36eb52e97d1f79e29860c4c6aa0e092

@@ -1,0 +1,5 @@
+{
+  "name": "AI 약관 분석기",
+  "description": "복잡한 법률 약관을 분석하여 일반인에게 위험한 독소조항을 찾아내고 쉽게 설명해주는 AI 변호사입니다.",
+  "requestFramePermissions": []
+}

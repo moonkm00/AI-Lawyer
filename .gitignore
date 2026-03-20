@@ -1,0 +1,12 @@
+/node_modules
+/.next
+/.env
+/.env.local
+/backend/build
+/backend/.gradle
+/backend/out
+*.log
+.DS_Store
+.vscode
+.idea
+

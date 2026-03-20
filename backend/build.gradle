@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.ailawyer'
+version = '0.0.1-SNAPSHOT'
+description = 'AI-Lawyer Backend'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+	implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+	
+	// LangChain4j (Gemini 및 OpenAI 통합 모듈)
+	implementation 'dev.langchain4j:langchain4j:0.36.0'
+	implementation 'dev.langchain4j:langchain4j-google-ai-gemini:0.36.0'
+	implementation 'dev.langchain4j:langchain4j-open-ai:0.36.0'
+	implementation 'dev.langchain4j:langchain4j-pgvector:0.36.0'
+
+	// Apache PDFBox (PDF 텍스트 추출용)
+	implementation 'org.apache.pdfbox:pdfbox:3.0.3'
+	
+	// JJWT
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
+
+	// 이미지 압축 (Vision API 용)
+	implementation 'net.coobird:thumbnailator:0.4.20'
+	
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	runtimeOnly 'org.postgresql:postgresql'
+	// runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
